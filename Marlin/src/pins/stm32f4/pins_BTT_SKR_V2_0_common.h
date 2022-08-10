@@ -65,9 +65,11 @@
 #define X_DIAG_PIN                          PC1   // X-STOP
 #define Y_DIAG_PIN                          PC3   // Y-STOP
 #define Z_DIAG_PIN                          PC0   // Z-STOP
-#define E0_DIAG_PIN                         PC2   // E0DET
-#define E1_DIAG_PIN                         PA0   // E1DET
+#define I_DIAG_PIN                         PC2   // E0DET
+#define J_DIAG_PIN                         PA0   // E1DET
 
+#define I_STOP_PIN                  I_DIAG_PIN
+#define J_STOP_PIN                  J_DIAG_PIN
 //
 // Limit Switches
 //
@@ -192,30 +194,18 @@
   #define Z_CS_PIN                          PD0
 #endif
 
-#ifndef E0_STEP_PIN
-  #define E0_STEP_PIN                       PD15
-#endif
-#ifndef E0_DIR_PIN
-  #define E0_DIR_PIN                        PD14
-#endif
-#ifndef E0_ENABLE_PIN
-  #define E0_ENABLE_PIN                     PC7
-#endif
-#ifndef E0_CS_PIN
-  #define E0_CS_PIN                         PC6
+#define I_STEP_PIN                          PD15
+#define I_DIR_PIN                           PD14
+#define I_ENABLE_PIN                        PC7
+#ifndef I_CS_PIN
+  #define I_CS_PIN                          PC6
 #endif
 
-#ifndef E1_STEP_PIN
-  #define E1_STEP_PIN                       PD11
-#endif
-#ifndef E1_DIR_PIN
-  #define E1_DIR_PIN                        PD10
-#endif
-#ifndef E1_ENABLE_PIN
-  #define E1_ENABLE_PIN                     PD13
-#endif
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                         PD12
+#define J_STEP_PIN                          PD11
+#define J_DIR_PIN                           PD10
+#define J_ENABLE_PIN                        PD13
+#ifndef J_CS_PIN
+  #define J_CS_PIN                          PD12
 #endif
 
 //
@@ -317,11 +307,11 @@
   #define Z_SERIAL_TX_PIN                   PD0
   #define Z_SERIAL_RX_PIN        Z_SERIAL_TX_PIN
 
-  #define E0_SERIAL_TX_PIN                  PC6
-  #define E0_SERIAL_RX_PIN      E0_SERIAL_TX_PIN
+  #define I_SERIAL_TX_PIN                  PC6
+  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN
 
-  #define E1_SERIAL_TX_PIN                  PD12
-  #define E1_SERIAL_RX_PIN      E1_SERIAL_TX_PIN
+  #define J_SERIAL_TX_PIN                  PD12
+  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN
 
   // Reduce baud rate to improve software serial reliability
   #define TMC_BAUD_RATE                    19200
