@@ -131,6 +131,7 @@
 #define RADIANS(d) ((d)*float(M_PI)/180.0f)
 #define DEGREES(r) ((r)*180.0f/float(M_PI))
 #define HYPOT2(x,y) (sq(x)+sq(y))
+#define HYPOT2AB(i,j) (sq(i)+sq(j))
 #define NORMSQ(x,y,z) (sq(x)+sq(y)+sq(z))
 
 #define CIRCLE_AREA(R) (float(M_PI) * sq(float(R)))
@@ -406,6 +407,7 @@
 #define LROUND(x)   lroundf(x)
 #define FMOD(x, y)  fmodf(x, y)
 #define HYPOT(x,y)  SQRT(HYPOT2(x,y))
+#define HYPOTAB(i,j) SQRT(HYPOT2AB(i,j))
 
 // Use NUM_ARGS(__VA_ARGS__) to get the number of variadic arguments
 #define _NUM_ARGS(_,n,m,l,k,j,i,h,g,f,e,d,c,b,a,Z,Y,X,W,V,U,T,S,R,Q,P,O,N,M,L,K,J,I,H,G,F,E,D,C,B,A,OUT,...) OUT

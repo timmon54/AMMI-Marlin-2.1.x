@@ -65,8 +65,8 @@
 #define X_DIAG_PIN                          PC1   // X-STOP
 #define Y_DIAG_PIN                          PC3   // Y-STOP
 #define Z_DIAG_PIN                          PC0   // Z-STOP
-#define I_DIAG_PIN                         PC2   // E0DET
-#define J_DIAG_PIN                         PA0   // E1DET
+#define I_DIAG_PIN                          PC2   // E0DET
+#define J_DIAG_PIN                          PC2   // E0DET
 
 #define I_STOP_PIN                  I_DIAG_PIN
 #define J_STOP_PIN                  J_DIAG_PIN
@@ -148,8 +148,8 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                      PC2   // E0DET
-#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+#define FIL_RUNOUT_PIN                      PC15   // PWRDET
+//#define FIL_RUNOUT2_PIN                     PA0   // E1DET
 
 //
 // Power Supply Control
@@ -162,7 +162,7 @@
 // Power Loss Detection
 //
 #ifndef POWER_LOSS_PIN
-  #define POWER_LOSS_PIN                    PC15  // PWRDET
+  //#define POWER_LOSS_PIN                    PC15  // PWRDET
 #endif
 
 //
