@@ -94,6 +94,41 @@
 
 #endif // QUICK_HOME_AB
 
+
+#if ENABLED(BELT_ADVANCE_AB)
+
+  static void quick_home_ab() {
+
+    // Pretend the current position is 0,0
+    current_position.set(0.0, 0.0, 0.0, 0.0, 0.0);
+    sync_plan_position();
+
+    const int i_axis_home_dir = I_HOME_DIR;
+
+    // Use a higher diagonal feedrate so axes move at homing speed
+    const float minfr = _MIN(homing_feedrate(I_AXIS), homing_feedrate(J_AXIS)),
+                fr_mm_s = HYPOTAB(minfr, minfr);
+
+    // Removed Sensorless Homing Section
+
+    do_blocking_move_to_xy(1.5 * max_length(I_AXIS) * i_axis_home_dir, 1.5 * max_length(J_AXIS) * J_HOME_DIR, fr_mm_s);
+
+    endstops.validate_homing_move();
+
+    current_position.set(0.0, 0.0, 0.0, 0.0, 0.0);
+
+    #if ENABLED(SENSORLESS_HOMING) && DISABLED(ENDSTOPS_ALWAYS_ON_DEFAULT)
+      TERN_(X_SENSORLESS, tmc_disable_stallguard(stepperX, stealth_states.x));
+      TERN_(X2_SENSORLESS, tmc_disable_stallguard(stepperX2, stealth_states.x2));
+      TERN_(Y_SENSORLESS, tmc_disable_stallguard(stepperY, stealth_states.y));
+      TERN_(Y2_SENSORLESS, tmc_disable_stallguard(stepperY2, stealth_states.y2));
+    #endif
+  }
+
+#endif // BELT_ADVANCE_AB
+
+
+
 #if ENABLED(QUICK_HOME)
 
   static void quick_home_xy() {

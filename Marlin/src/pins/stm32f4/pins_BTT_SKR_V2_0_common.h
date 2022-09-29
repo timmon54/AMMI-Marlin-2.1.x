@@ -149,7 +149,7 @@
 // Filament Runout Sensor
 //
 #define FIL_RUNOUT_PIN                      PC15   // PWRDET
-//#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+#define FIL_RUNOUT2_PIN                     PA0   // E1DET
 
 //
 // Power Supply Control
@@ -208,15 +208,23 @@
   #define J_CS_PIN                          PD12
 #endif
 
+
+// Potentiometer Pin
+// #ifndef Linear_Pot_PIN
+//   #define Linear_Pot_PIN                        PA2   // TH0
+// #endif
+
+
+
 //
 // Temperature Sensors
 //
-#ifndef TEMP_0_PIN
-  #define TEMP_0_PIN                        PA2   // TH0
-#endif
+
+
 #ifndef TEMP_1_PIN
   #define TEMP_1_PIN                        PA3   // TH1
 #endif
+
 #ifndef TEMP_BED_PIN
   #define TEMP_BED_PIN                      PA1   // TB
 #endif
