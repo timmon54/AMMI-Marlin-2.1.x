@@ -17,7 +17,13 @@ Please test this firmware and let us know if it misbehaves in any way. Volunteer
 
 ## Introduction
 
+The goal is to develop a custom Digital Light Processing (DLP) printer that cures resin with a projected image. The base Marlin Firmware code from their GitHub repository was modified to meet our specifications. The finished printer will print composite materials made from resins and fiberglass sheets. 
+
 ## Changes Made to Base Marlin Code
+
+In order to have a fucntioning DLP printer, the following modifcations were made to the base Marlin Firmware Code:
+
+
 
 ## Marlin 2.0 Bugfix Branch
 
