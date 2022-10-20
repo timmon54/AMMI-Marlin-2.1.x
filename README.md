@@ -15,6 +15,10 @@
 Additional documentation can be found at the [Marlin Home Page](https://marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
 
+## Introduction
+
+## Changes Made to Base Marlin Code
+
 ## Marlin 2.0 Bugfix Branch
 
 __Not for production use. Use with caution!__
