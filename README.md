@@ -23,9 +23,9 @@ The goal is to develop a custom Digital Light Processing (DLP) printer that cure
 
 In order to have a fucntioning DLP printer, the following modifcations were made to the base Marlin Firmware Code from most recent to oldest:
 
-**Configuration.h:**
+   **Configuration.h:**
 
-**8/10/2022**
+   **8/10/2022**
 
 165  #define I_DRIVER_TYPE  TMC2209
 
@@ -80,9 +80,32 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2772 #define CR10_STOCKDISPLAY
 
 
-**Configuration_adv.h:**
+   **7/25/2022**
 
-**8/15/2022**
+531  #define TEMP_SENSOR_0 998
+
+539  #define TEMP_SENSOR_BED 998
+
+826  //#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
+
+827  //#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
+
+828  //#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+
+829  //#define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
+
+1746 #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
+
+1788 #define FILAMENT_RUNOUT_SCRIPT "M600"
+
+2189 #define NOZZLE_PARK_FEATURE
+
+2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
+
+
+   **Configuration_adv.h:**
+
+   **8/15/2022**
 
 1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
     
@@ -111,7 +134,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
     
     
-**8/10/2022**
+   **8/10/2022**
     
 851  #define HOMING_BUMP_MM      { 5, 5, 2, 5, 5 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
     
@@ -144,6 +167,63 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3862 #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback    
     
 3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
+    
+
+   **7/25/2022**
+
+2328 #define TX_BUFFER_SIZE 128
+    
+2336 #if RX_BUFFER_SIZE >= 1024 
+    
+2366 #define EMERGENCY_PARSER
+    
+2577 #define ADVANCED_PAUSE_FEATURE    
+    
+    
+    
+    
+   **pins_BTT_SKR_V2_0_common.h:**  
+    
+    **8/15/2022**    
+    
+68   #define I_DIAG_PIN                         PC2   // E0DET
+    
+69   #define J_DIAG_PIN                         PA0   // E1DET  
+    
+71   #define I_STOP_PIN                  I_DIAG_PIN
+    
+72   #define J_STOP_PIN                  J_DIAG_PIN    
+    
+197  #define I_STEP_PIN                          PD15
+    
+198  #define I_DIR_PIN                           PD14
+    
+199  #define I_ENABLE_PIN                        PC7
+    
+200  #ifndef I_CS_PIN
+    
+201  #define I_CS_PIN                          PC6  
+    
+204  #define J_STEP_PIN                          PD11
+    
+205  #define J_DIR_PIN                           PD10
+    
+206  #define J_ENABLE_PIN                        PD13
+    
+207  #ifndef J_CS_PIN
+    
+208  #define J_CS_PIN                          PD12    
+    
+310  #define I_SERIAL_TX_PIN                  PC6
+    
+311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN   
+    
+313  #define J_SERIAL_TX_PIN                  PD12
+    
+314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
+    
+    
+    
     
     
 ## Marlin 2.0 Bugfix Branch
