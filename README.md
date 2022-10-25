@@ -23,70 +23,128 @@ The goal is to develop a custom Digital Light Processing (DLP) printer that cure
 
 In order to have a fucntioning DLP printer, the following modifcations were made to the base Marlin Firmware Code from most recent to oldest:
 
-Configuration.h:
+**Configuration.h:**
 
-8/10/2022
+**8/10/2022**
+
 165  #define I_DRIVER_TYPE  TMC2209
+
 166  #define J_DRIVER_TYPE  TMC2209
+
 171  //#define E0_DRIVER_TYPE TMC2209
+
 172  //#define E1_DRIVER_TYPE TMC2209
+
 226  #define EXTRUDERS 0
+
 1004 #define USE_IMIN_PLUG
+
 1005 #define USE_JMIN_PLUG
+
 1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 400, 400 }
+
 1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 10, 10, }
+
 1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 100, 100 }
+
 1452 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0, 0, 0 }
+
 1579 #define I_ENABLE_ON 0
+
 1580 #define J_ENABLE_ON 0
+
 1591 #define DISABLE_I false
+
 1592 #define DISABLE_J false
+
 1612 #define INVERT_I_DIR false
+
 1613 #define INVERT_J_DIR false
+
 1653 #define I_HOME_DIR -1
+
 1654 #define J_HOME_DIR -1
+
 1673 #define I_MIN_POS 0
+
 1674 #define I_MAX_POS 3600000
+
 1675 #define J_MIN_POS 0
+
 1676 #define J_MAX_POS 3600000
+
 2049 //#define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
+
 2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (5*60), (5*60) }
+
 2772 #define CR10_STOCKDISPLAY
 
-Configuration_adv.h:
 
-8/15/2022
+**Configuration_adv.h:**
+
+**8/15/2022**
+
 1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
+    
 1577 //#define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'
+    
 1660 //#define SDCARD_CONNECTION ONBOARD
+
 2402 //#define SERIAL_FLOAT_PRECISION 4
+    
 2600 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
+    
 3629 //#define AUTO_REPORT_TEMPERATURES
-3637 //#define AUTO_REPORT_POSITION    
+    
+3637 //#define AUTO_REPORT_POSITION
+    
 3644 //#define M115_GEOMETRY_REPORT    
+    
 3692 //#define M114_DETAIL         // Use 'M114` for details to check planner calculations
+    
 3696 //#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
+    
 3859 //#define HOST_ACTION_COMMANDS
+    
 3862 //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback    
+    
 3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
     
-8/10/2022
+    
+**8/10/2022**
+    
 851  #define HOMING_BUMP_MM      { 5, 5, 2, 5, 5 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
+    
 852  #define HOMING_BUMP_DIVISOR { 2, 2, 4, 2, 2 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)    
+    
 1031 #define AXIS_RELATIVE_MODES { false, false, false, false, false }
-1281 #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel    
+    
+1281 #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
+    
 1561 #define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
+    
 1577 #define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>' 
+    
 1660 #define SDCARD_CONNECTION ONBOARD
+    
 2402 #define SERIAL_FLOAT_PRECISION 4
+
 2600 #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
+    
 3637 #define AUTO_REPORT_POSITION    
+    
 3644 #define M115_GEOMETRY_REPORT
+    
 3692 #define M114_DETAIL         // Use 'M114` for details to check planner calculations    
-3696 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)    
+    
+3696 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)  
+    
 3859 #define HOST_ACTION_COMMANDS
+    
 3862 #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback    
-3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
+    
+3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
+    
     
 ## Marlin 2.0 Bugfix Branch
 
