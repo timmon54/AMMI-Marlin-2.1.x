@@ -275,7 +275,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
     
 
-   **7/25/2022**
+    **7/25/2022**
 
 2328 #define TX_BUFFER_SIZE 128
     
@@ -312,7 +312,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     
    **pins_BTT_SKR_V2_0_common.h:**  
     
-    **8/15/2022**    
+   **8/15/2022**    
     
 68   #define I_DIAG_PIN                         PC2   // E0DET
     
