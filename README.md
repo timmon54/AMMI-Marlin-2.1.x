@@ -23,9 +23,29 @@ The goal is to develop a custom Digital Light Processing (DLP) printer that cure
 
 In order to have a fucntioning DLP printer, the following modifcations were made to the base Marlin Firmware Code from most recent to oldest:
 
-   **Configuration.h:**
+   ### Configuration.h:
 
-   **8/10/2022**
+   ##### 8/28/2022
+
+113  #define BAUDRATE 115200
+
+1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 88.88, 88.88 }
+
+1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 3600, 3600 }
+
+1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 400, 400 }
+
+1673 #define I_MIN_POS -3600000
+
+1675 #define J_MIN_POS -3600000
+
+1745 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
+
+2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (60*60), (60*60) }
+
+2772 //#define CR10_STOCKDISPLAY
+
+   ##### 8/10/2022
 
 165  #define I_DRIVER_TYPE  TMC2209
 
@@ -80,7 +100,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2772 #define CR10_STOCKDISPLAY
 
 
-   **7/25/2022**
+   ##### 7/25/2022
 
 531  #define TEMP_SENSOR_0 998
 
@@ -103,7 +123,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
 
 
-   **7/20/2022**
+  ##### 7/20/2022
    
 114  #define BAUDRATE 250000
 
@@ -116,7 +136,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 1788 #define FILAMENT_RUNOUT_SCRIPT "M226 PC2 S1"
 
 
-   **7/19/2022**
+   ##### 7/19/2022
    
 63   #define STRING_CONFIG_H_AUTHOR "(Rowan University, Elias Timmons)" // Who made the changes.
 
@@ -209,9 +229,13 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2405 #define SDSUPPORT
 
 
-   **Configuration_adv.h:**
+   ### Configuration_adv.h: 
+   
+   ##### 8/28/2022
 
-   **8/15/2022**
+856  #define QUICK_HOME_AB
+
+   ##### 8/15/2022
 
 1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
     
@@ -240,7 +264,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
     
     
-   **8/10/2022**
+   ##### 8/10/2022
     
 851  #define HOMING_BUMP_MM      { 5, 5, 2, 5, 5 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
     
@@ -275,7 +299,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
     
 
-    **7/25/2022**
+    ##### 7/25/2022
 
 2328 #define TX_BUFFER_SIZE 128
     
@@ -286,7 +310,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2577 #define ADVANCED_PAUSE_FEATURE    
     
     
-    **7/20/2022**
+    ##### 7/20/2022
     
 1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }          // Values in milliamps
 
@@ -295,7 +319,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 3242 #define TMC_DEBUG
 
 
-   **7/19/2022**
+   ##### 7/19/2022
    
 907  #define BLTOUCH_SET_5V_MODE
 
@@ -310,9 +334,22 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 4220 #define PINS_DEBUGGING
  
     
-   **pins_BTT_SKR_V2_0_common.h:**  
+   ### pins_BTT_SKR_V2_0_common.h:  
     
-   **8/15/2022**    
+    ##### 8/28/2022
+    
+68   #define I_DIAG_PIN                          PC2   // E0DET
+    
+69   #define J_DIAG_PIN                          PC2   // E0DET    
+    
+151  #define FIL_RUNOUT_PIN                      PC15   // PWRDET
+    
+152  //#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+    
+165  //#define POWER_LOSS_PIN                    PC15  // PWRDET
+    
+    
+   ##### 8/15/2022  
     
 68   #define I_DIAG_PIN                         PC2   // E0DET
     
@@ -351,6 +388,88 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
     
     
+### macros.h
+    
+##### 8/28/2022  
+    
+134  #define HYPOT2AB(i,j) (sq(i)+sq(j))
+    
+410  #define HYPOTAB(i,j) SQRT(HYPOT2AB(i,j))  
+    
+    
+    
+### G28.cpp
+   
+##### 8/28/2022
+    
+    if ENABLED(QUICK_HOME_AB)
+
+     static void quick_home_ab() {
+
+    // Pretend the current position is 0,0
+    current_position.set(0.0, 0.0, 0.0, 0.0, 0.0);
+    sync_plan_position();
+
+    const int i_axis_home_dir = I_HOME_DIR;
+
+    // Use a higher diagonal feedrate so axes move at homing speed
+    const float minfr = _MIN(homing_feedrate(I_AXIS), homing_feedrate(J_AXIS)),
+                fr_mm_s = HYPOTAB(minfr, minfr);
+
+    // Removed Sensorless Homing Section
+
+    do_blocking_move_to_xy(1.5 * max_length(I_AXIS) * i_axis_home_dir, 1.5 * max_length(J_AXIS) * J_HOME_DIR, fr_mm_s);
+
+    endstops.validate_homing_move();
+
+    current_position.set(0.0, 0.0, 0.0, 0.0, 0.0);
+
+    #if ENABLED(SENSORLESS_HOMING) && DISABLED(ENDSTOPS_ALWAYS_ON_DEFAULT)
+      TERN_(X_SENSORLESS, tmc_disable_stallguard(stepperX, stealth_states.x));
+      TERN_(X2_SENSORLESS, tmc_disable_stallguard(stepperX2, stealth_states.x2));
+      TERN_(Y_SENSORLESS, tmc_disable_stallguard(stepperY, stealth_states.y));
+      TERN_(Y2_SENSORLESS, tmc_disable_stallguard(stepperY2, stealth_states.y2));
+    #endif
+    }
+
+    #endif // QUICK_HOME_AB
+
+    #if ENABLED(QUICK_HOME)
+
+    static void quick_home_xy() {
+
+    // Pretend the current position is 0,0
+    current_position.set(0.0, 0.0);
+    sync_plan_position();
+
+    const int x_axis_home_dir = TOOL_X_HOME_DIR(active_extruder);
+
+    // Use a higher diagonal feedrate so axes move at homing speed
+    const float minfr = _MIN(homing_feedrate(X_AXIS), homing_feedrate(Y_AXIS)),
+                fr_mm_s = HYPOT(minfr, minfr);
+
+    #if ENABLED(SENSORLESS_HOMING)
+      sensorless_t stealth_states {
+        NUM_AXIS_LIST(
+          TERN0(X_SENSORLESS, tmc_enable_stallguard(stepperX)),
+          TERN0(Y_SENSORLESS, tmc_enable_stallguard(stepperY)),
+          false, false, false, false
+        )
+        , TERN0(X2_SENSORLESS, tmc_enable_stallguard(stepperX2))
+        , TERN0(Y2_SENSORLESS, tmc_enable_stallguard(stepperY2))
+    @ -413,6 +445,9 @@ void GcodeSuite::G28() {
+    // Diagonal move first if both are homing
+    TERN_(QUICK_HOME, if (doX && doY) quick_home_xy());
+
+    // Combined homing of A and B axis (Dual Motor Belt Drive Mod)
+    TERN_(QUICK_HOME_AB, if (doI && doJ) quick_home_ab());
+
+    // Home Y (before X)
+    if (ENABLED(HOME_Y_BEFORE_X) && (doY || TERN0(CODEPENDENT_XY_HOMING, doX)))
+      homeaxis(Y_AXIS);
+
+
+
     
     
     
