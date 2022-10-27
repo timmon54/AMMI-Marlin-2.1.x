@@ -103,6 +103,112 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
 
 
+   **7/20/2022**
+   
+114  #define BAUDRATE 250000
+
+122  #define SERIAL_PORT_2 -1
+
+1003 //#define USE_YMIN_PLUG
+
+1012 #define USE_YMAX_PLUG
+
+1788 #define FILAMENT_RUNOUT_SCRIPT "M226 PC2 S1"
+
+
+   **7/19/2022**
+   
+63   #define STRING_CONFIG_H_AUTHOR "(Rowan University, Elias Timmons)" // Who made the changes.
+
+90   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B
+
+101  #define SERIAL_PORT 1
+
+114  #define BAUDRATE 115200
+
+158  #define X_DRIVER_TYPE  TMC2209
+
+159  #define Y_DRIVER_TYPE  TMC2209
+
+160  #define Z_DRIVER_TYPE  TMC2209
+
+172  #define E0_DRIVER_TYPE TMC2209
+
+173  #define E1_DRIVER_TYPE TMC2209
+
+1138 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 96 }
+
+1145 #define DEFAULT_MAX_FEEDRATE          { 300, 10, 10, 25 }
+
+1158 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 10000 }
+
+1173 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+
+1174 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+
+1175 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+
+1247 #define USE_PROBE_FOR_Z_HOMING
+
+1301 #define BLTOUCH
+
+1453 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
+
+1499 #define PROBE_ENABLE_DISABLE
+
+1611 #define INVERT_Y_DIR false
+
+1644 #define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+
+1647 #define Z_AFTER_HOMING  0     // (mm) Height to move to after homing Z
+
+1652 #define Y_HOME_DIR 1
+
+1664 #define X_BED_SIZE 1000
+
+1665 #define Y_BED_SIZE 50
+
+1669 #define Y_MIN_POS -45
+
+1670 #define Z_MIN_POS -5
+
+1672 +#define Y_MAX_POS 5
+
+1673 #define Z_MAX_POS 140
+
+1741 #define FILAMENT_RUNOUT_SENSOR
+
+1746 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
+
+1747 //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
+
+1748 #define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
+
+1842 #define AUTO_BED_LEVELING_LINEAR
+
+1869 #define DEBUG_LEVELING_FEATURE
+
+2031 #define MANUAL_Y_HOME_POS 0
+
+2032 #define MANUAL_Z_HOME_POS 0
+
+2047 #define Z_SAFE_HOMING
+
+2050 #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
+
+2051 #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
+
+2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60) }
+
+2132 #define EEPROM_SETTINGS     // Persistent storage with M500 and M501
+
+2137 #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+
+2138  #define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
+
+2405 #define SDSUPPORT
+
+
    **Configuration_adv.h:**
 
    **8/15/2022**
@@ -180,7 +286,29 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 2577 #define ADVANCED_PAUSE_FEATURE    
     
     
+    **7/20/2022**
     
+1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }          // Values in milliamps
+
+3133 #define MONITOR_DRIVER_STATUS
+
+3242 #define TMC_DEBUG
+
+
+   **7/19/2022**
+   
+907  #define BLTOUCH_SET_5V_MODE
+
+1989 #define BABYSTEPPING
+
+2012 #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
+
+4054 #define NANODLP_Z_SYNC
+
+4215 #define DIRECT_PIN_CONTROL
+
+4220 #define PINS_DEBUGGING
+ 
     
    **pins_BTT_SKR_V2_0_common.h:**  
     
