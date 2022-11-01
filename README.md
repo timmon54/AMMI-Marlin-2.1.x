@@ -136,7 +136,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 1788 #define FILAMENT_RUNOUT_SCRIPT "M226 PC2 S1"
 
 
-   ##### 7/19/2022
+  ##### 7/19/2022
    
 63   #define STRING_CONFIG_H_AUTHOR "(Rowan University, Elias Timmons)" // Who made the changes.
 
@@ -388,6 +388,68 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
     
     
+   ##### 8/10/2022  
+
+68   #define I_DIAG_PIN                         PC2   // E0DET
+
+69   #define J_DIAG_PIN                         PA0   // E1DET
+
+71   #define I_STOP_PIN                  I_DIAG_PIN
+
+72   #define J_STOP_PIN                  J_DIAG_PIN
+
+Delete Lines 195-205:
+
+    195  #ifndef E0_STEP_PIN
+    196  #define E0_STEP_PIN                       PD15
+    197  #endif
+    198  #ifndef E0_DIR_PIN
+    199   #define E0_DIR_PIN                        PD14
+    200  #endif
+    201 #ifndef E0_ENABLE_PIN
+    202  #define E0_ENABLE_PIN                     PC7
+    203  #endif
+    204  #ifndef E0_CS_PIN
+    205   #define E0_CS_PIN                         PC6
+
+Replace lines 195-205 with:
+
+    197  #define I_STEP_PIN                          PD15
+    198  #define I_DIR_PIN                           PD14
+    199  #define I_ENABLE_PIN                        PC7
+    200  #ifndef I_CS_PIN
+    201  #define I_CS_PIN                            PC6
+    
+Delete Lines 208-218:
+
+    208 #ifndef E1_STEP_PIN
+    209  #define E1_STEP_PIN                       PD11
+    210 #endif
+    211 #ifndef E1_DIR_PIN
+    212 #define E1_DIR_PIN                        PD10
+    213 #endif
+    214 #ifndef E1_ENABLE_PIN
+    215 #define E1_ENABLE_PIN                     PD13
+    216 #endif
+    217 #ifndef E1_CS_PIN
+    218 #define E1_CS_PIN                         PD12
+    
+Replace Lines 208-218 with:
+    
+    204 #define J_STEP_PIN                          PD11
+    205 #define J_DIR_PIN                           PD10
+    206 #define J_ENABLE_PIN                        PD13
+    207 #ifndef J_CS_PIN
+    208 #define J_CS_PIN                          PD12   
+    
+310  #define I_SERIAL_TX_PIN                  PC6
+
+311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN
+
+313  #define J_SERIAL_TX_PIN                  PD12
+
+314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN   
+
 ### macros.h
     
 ##### 8/28/2022  
