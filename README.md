@@ -26,377 +26,227 @@ In order to have a fucntioning DLP printer, the following modifcations were made
    ### Configuration.h:
 
    ##### 8/28/2022
-
-113  #define BAUDRATE 115200
-
-1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 88.88, 88.88 }
-
-1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 3600, 3600 }
-
-1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 400, 400 }
-
-1673 #define I_MIN_POS -3600000
-
-1675 #define J_MIN_POS -3600000
-
-1745 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
-
-2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (60*60), (60*60) }
-
-2772 //#define CR10_STOCKDISPLAY
+   Line# 
+   
+    113  #define BAUDRATE 115200
+    1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 88.88, 88.88 }
+    1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 3600, 3600 }
+    1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 400, 400 }
+    1673 #define I_MIN_POS -3600000
+    1675 #define J_MIN_POS -3600000
+    1745 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
+    2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (60*60), (60*60) }
+    2772 //#define CR10_STOCKDISPLAY
 
    ##### 8/10/2022
 
-165  #define I_DRIVER_TYPE  TMC2209
-
-166  #define J_DRIVER_TYPE  TMC2209
-
-171  //#define E0_DRIVER_TYPE TMC2209
-
-172  //#define E1_DRIVER_TYPE TMC2209
-
-226  #define EXTRUDERS 0
-
-1004 #define USE_IMIN_PLUG
-
-1005 #define USE_JMIN_PLUG
-
-1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 400, 400 }
-
-1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 10, 10, }
-
-1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 100, 100 }
-
-1452 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0, 0, 0 }
-
-1579 #define I_ENABLE_ON 0
-
-1580 #define J_ENABLE_ON 0
-
-1591 #define DISABLE_I false
-
-1592 #define DISABLE_J false
-
-1612 #define INVERT_I_DIR false
-
-1613 #define INVERT_J_DIR false
-
-1653 #define I_HOME_DIR -1
-
-1654 #define J_HOME_DIR -1
-
-1673 #define I_MIN_POS 0
-
-1674 #define I_MAX_POS 3600000
-
-1675 #define J_MIN_POS 0
-
-1676 #define J_MAX_POS 3600000
-
-2049 //#define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
-
-2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (5*60), (5*60) }
-
-2772 #define CR10_STOCKDISPLAY
+    165  #define I_DRIVER_TYPE  TMC2209
+    166  #define J_DRIVER_TYPE  TMC2209
+    171  //#define E0_DRIVER_TYPE TMC2209
+    172  //#define E1_DRIVER_TYPE TMC2209
+    226  #define EXTRUDERS 0
+    1004 #define USE_IMIN_PLUG
+    1005 #define USE_JMIN_PLUG
+    1137 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 400, 400 }
+    1144 #define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 10, 10, }
+    1157 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 100, 100 }
+    1452 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0, 0, 0 }
+    1579 #define I_ENABLE_ON 0
+    1580 #define J_ENABLE_ON 0
+    1591 #define DISABLE_I false
+    1592 #define DISABLE_J false
+    1612 #define INVERT_I_DIR false
+    1613 #define INVERT_J_DIR false
+    1653 #define I_HOME_DIR -1
+    1654 #define J_HOME_DIR -1
+    1673 #define I_MIN_POS 0
+    1674 #define I_MAX_POS 3600000
+    1675 #define J_MIN_POS 0
+    1676 #define J_MAX_POS 3600000
+    2049 //#define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
+    2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (5*60), (5*60) }
+    2772 #define CR10_STOCKDISPLAY
 
 
    ##### 7/25/2022
 
-531  #define TEMP_SENSOR_0 998
-
-539  #define TEMP_SENSOR_BED 998
-
-826  //#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-
-827  //#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-
-828  //#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
-
-829  //#define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
-
-1746 #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
-
-1788 #define FILAMENT_RUNOUT_SCRIPT "M600"
-
-2189 #define NOZZLE_PARK_FEATURE
-
-2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
+    531  #define TEMP_SENSOR_0 998
+    539  #define TEMP_SENSOR_BED 998
+    826  //#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
+    827  //#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
+    828  //#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
+    829  //#define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
+    1746 #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
+    1788 #define FILAMENT_RUNOUT_SCRIPT "M600"
+    2189 #define NOZZLE_PARK_FEATURE
+    2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
 
 
   ##### 7/20/2022
    
-114  #define BAUDRATE 250000
-
-122  #define SERIAL_PORT_2 -1
-
-1003 //#define USE_YMIN_PLUG
-
-1012 #define USE_YMAX_PLUG
-
-1788 #define FILAMENT_RUNOUT_SCRIPT "M226 PC2 S1"
+    114  #define BAUDRATE 250000
+    122  #define SERIAL_PORT_2 -1
+    1003 //#define USE_YMIN_PLUG
+    1012 #define USE_YMAX_PLUG
+    1788 #define FILAMENT_RUNOUT_SCRIPT "M226 PC2 S1"
 
 
   ##### 7/19/2022
    
-63   #define STRING_CONFIG_H_AUTHOR "(Rowan University, Elias Timmons)" // Who made the changes.
-
-90   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B
-
-101  #define SERIAL_PORT 1
-
-114  #define BAUDRATE 115200
-
-158  #define X_DRIVER_TYPE  TMC2209
-
-159  #define Y_DRIVER_TYPE  TMC2209
-
-160  #define Z_DRIVER_TYPE  TMC2209
-
-172  #define E0_DRIVER_TYPE TMC2209
-
-173  #define E1_DRIVER_TYPE TMC2209
-
-1138 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 96 }
-
-1145 #define DEFAULT_MAX_FEEDRATE          { 300, 10, 10, 25 }
-
-1158 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 10000 }
-
-1173 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
-
-1174 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
-
-1175 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
-
-1247 #define USE_PROBE_FOR_Z_HOMING
-
-1301 #define BLTOUCH
-
-1453 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
-
-1499 #define PROBE_ENABLE_DISABLE
-
-1611 #define INVERT_Y_DIR false
-
-1644 #define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
-
-1647 #define Z_AFTER_HOMING  0     // (mm) Height to move to after homing Z
-
-1652 #define Y_HOME_DIR 1
-
-1664 #define X_BED_SIZE 1000
-
-1665 #define Y_BED_SIZE 50
-
-1669 #define Y_MIN_POS -45
-
-1670 #define Z_MIN_POS -5
-
-1672 +#define Y_MAX_POS 5
-
-1673 #define Z_MAX_POS 140
-
-1741 #define FILAMENT_RUNOUT_SENSOR
-
-1746 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
-
-1747 //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
-
-1748 #define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
-
-1842 #define AUTO_BED_LEVELING_LINEAR
-
-1869 #define DEBUG_LEVELING_FEATURE
-
-2031 #define MANUAL_Y_HOME_POS 0
-
-2032 #define MANUAL_Z_HOME_POS 0
-
-2047 #define Z_SAFE_HOMING
-
-2050 #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
-
-2051 #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
-
-2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60) }
-
-2132 #define EEPROM_SETTINGS     // Persistent storage with M500 and M501
-
-2137 #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
-
-2138  #define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
-
-2405 #define SDSUPPORT
+    63   #define STRING_CONFIG_H_AUTHOR "(Rowan University, Elias Timmons)" // Who made the changes.
+    90   #define MOTHERBOARD BOARD_BTT_SKR_V2_0_REV_B
+    101  #define SERIAL_PORT 1
+    114  #define BAUDRATE 115200
+    158  #define X_DRIVER_TYPE  TMC2209
+    159  #define Y_DRIVER_TYPE  TMC2209
+    160  #define Z_DRIVER_TYPE  TMC2209
+    172  #define E0_DRIVER_TYPE TMC2209
+    173  #define E1_DRIVER_TYPE TMC2209
+    1138 #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 96 }
+    1145 #define DEFAULT_MAX_FEEDRATE          { 300, 10, 10, 25 }
+    1158 #define DEFAULT_MAX_ACCELERATION      { 3000, 100, 100, 10000 }
+    1173 #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+    1174 #define DEFAULT_RETRACT_ACCELERATION  1000    // E acceleration for retracts
+    1175 #define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+    1247 #define USE_PROBE_FOR_Z_HOMING
+    1301 #define BLTOUCH
+    1453 #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
+    1499 #define PROBE_ENABLE_DISABLE
+    1611 #define INVERT_Y_DIR false
+    1644 #define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
+    1647 #define Z_AFTER_HOMING  0     // (mm) Height to move to after homing Z
+    1652 #define Y_HOME_DIR 1
+    1664 #define X_BED_SIZE 1000
+    1665 #define Y_BED_SIZE 50
+    1669 #define Y_MIN_POS -45
+    1670 #define Z_MIN_POS -5
+    1672 +#define Y_MAX_POS 5
+    1673 #define Z_MAX_POS 140
+    1741 #define FILAMENT_RUNOUT_SENSOR
+    1746 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
+    1747 //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
+    1748 #define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
+    1842 #define AUTO_BED_LEVELING_LINEAR
+    1869 #define DEBUG_LEVELING_FEATURE
+    2031 #define MANUAL_Y_HOME_POS 0
+    2032 #define MANUAL_Z_HOME_POS 0
+    2047 #define Z_SAFE_HOMING
+    2050 #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
+    2051 #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
+    2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60) }
+    2132 #define EEPROM_SETTINGS     // Persistent storage with M500 and M501
+    2137 #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+    2138  #define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
+    2405 #define SDSUPPORT
 
 
    ### Configuration_adv.h: 
    
    ##### 8/28/2022
 
-856  #define QUICK_HOME_AB
+    856  #define QUICK_HOME_AB
 
    ##### 8/15/2022
 
-1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
-    
-1577 //#define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'
-    
-1660 //#define SDCARD_CONNECTION ONBOARD
-
-2402 //#define SERIAL_FLOAT_PRECISION 4
-    
-2600 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
-    
-3629 //#define AUTO_REPORT_TEMPERATURES
-    
-3637 //#define AUTO_REPORT_POSITION
-    
-3644 //#define M115_GEOMETRY_REPORT    
-    
-3692 //#define M114_DETAIL         // Use 'M114` for details to check planner calculations
-    
-3696 //#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)
-    
-3859 //#define HOST_ACTION_COMMANDS
-    
-3862 //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback    
-    
-3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
+    1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
+    1577 //#define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'
+    1660 //#define SDCARD_CONNECTION ONBOARD
+    2402 //#define SERIAL_FLOAT_PRECISION 4
+    2600 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu. 
+    3629 //#define AUTO_REPORT_TEMPERATURES
+    3637 //#define AUTO_REPORT_POSITION
+    3644 //#define M115_GEOMETRY_REPORT        
+    3692 //#define M114_DETAIL         // Use 'M114` for details to check planner calculations    
+    3696 //#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)   
+    3859 //#define HOST_ACTION_COMMANDS    
+    3862 //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback        
+    3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
     
     
    ##### 8/10/2022
     
-851  #define HOMING_BUMP_MM      { 5, 5, 2, 5, 5 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
-    
-852  #define HOMING_BUMP_DIVISOR { 2, 2, 4, 2, 2 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)    
-    
-1031 #define AXIS_RELATIVE_MODES { false, false, false, false, false }
-    
-1281 #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
-    
-1561 #define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
-    
-1577 #define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>' 
-    
-1660 #define SDCARD_CONNECTION ONBOARD
-    
-2402 #define SERIAL_FLOAT_PRECISION 4
-
-2600 #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
-    
-3637 #define AUTO_REPORT_POSITION    
-    
-3644 #define M115_GEOMETRY_REPORT
-    
-3692 #define M114_DETAIL         // Use 'M114` for details to check planner calculations    
-    
-3696 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)  
-    
-3859 #define HOST_ACTION_COMMANDS
-    
-3862 #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback    
-    
-3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
+    851  #define HOMING_BUMP_MM      { 5, 5, 2, 5, 5 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
+    852  #define HOMING_BUMP_DIVISOR { 2, 2, 4, 2, 2 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)        
+    1031 #define AXIS_RELATIVE_MODES { false, false, false, false, false }    
+    1281 #define MANUAL_FEEDRATE { 50*60, 50*60, 4*60, 2*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel    
+    1561 #define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'    
+    1577 #define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'    
+    1660 #define SDCARD_CONNECTION ONBOARD   
+    2402 #define SERIAL_FLOAT_PRECISION 4
+    2600 #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
+    3637 #define AUTO_REPORT_POSITION        
+    3644 #define M115_GEOMETRY_REPORT    
+    3692 #define M114_DETAIL         // Use 'M114` for details to check planner calculations        
+    3696 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)      
+    3859 #define HOST_ACTION_COMMANDS    
+    3862 #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback        
+    3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
     
 
-    ##### 7/25/2022
+   ##### 7/25/2022
 
-2328 #define TX_BUFFER_SIZE 128
-    
-2336 #if RX_BUFFER_SIZE >= 1024 
-    
-2366 #define EMERGENCY_PARSER
-    
-2577 #define ADVANCED_PAUSE_FEATURE    
+    2328 #define TX_BUFFER_SIZE 128   
+    2336 #if RX_BUFFER_SIZE >= 1024    
+    2366 #define EMERGENCY_PARSER  
+    2577 #define ADVANCED_PAUSE_FEATURE    
     
     
-    ##### 7/20/2022
+   ##### 7/20/2022
     
-1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }          // Values in milliamps
-
-3133 #define MONITOR_DRIVER_STATUS
-
-3242 #define TMC_DEBUG
+    1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }          // Values in milliamps
+    3133 #define MONITOR_DRIVER_STATUS
+    3242 #define TMC_DEBUG
 
 
    ##### 7/19/2022
    
-907  #define BLTOUCH_SET_5V_MODE
+    907  #define BLTOUCH_SET_5V_MODE
+    1989 #define BABYSTEPPING
+    2012 #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
+    4054 #define NANODLP_Z_SYNC
+    4215 #define DIRECT_PIN_CONTROL
+    4220 #define PINS_DEBUGGING
 
-1989 #define BABYSTEPPING
-
-2012 #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
-
-4054 #define NANODLP_Z_SYNC
-
-4215 #define DIRECT_PIN_CONTROL
-
-4220 #define PINS_DEBUGGING
- 
     
    ### pins_BTT_SKR_V2_0_common.h:  
     
-    ##### 8/28/2022
+   ##### 8/28/2022
     
-68   #define I_DIAG_PIN                          PC2   // E0DET
-    
-69   #define J_DIAG_PIN                          PC2   // E0DET    
-    
-151  #define FIL_RUNOUT_PIN                      PC15   // PWRDET
-    
-152  //#define FIL_RUNOUT2_PIN                     PA0   // E1DET
-    
-165  //#define POWER_LOSS_PIN                    PC15  // PWRDET
+    68   #define I_DIAG_PIN                          PC2   // E0DET  
+    69   #define J_DIAG_PIN                          PC2   // E0DET      
+    151  #define FIL_RUNOUT_PIN                      PC15   // PWRDET    
+    152  //#define FIL_RUNOUT2_PIN                     PA0   // E1DET    
+    165  //#define POWER_LOSS_PIN                    PC15  // PWRDET
     
     
    ##### 8/15/2022  
     
-68   #define I_DIAG_PIN                         PC2   // E0DET
-    
-69   #define J_DIAG_PIN                         PA0   // E1DET  
-    
-71   #define I_STOP_PIN                  I_DIAG_PIN
-    
-72   #define J_STOP_PIN                  J_DIAG_PIN    
-    
-197  #define I_STEP_PIN                          PD15
-    
-198  #define I_DIR_PIN                           PD14
-    
-199  #define I_ENABLE_PIN                        PC7
-    
-200  #ifndef I_CS_PIN
-    
-201  #define I_CS_PIN                          PC6  
-    
-204  #define J_STEP_PIN                          PD11
-    
-205  #define J_DIR_PIN                           PD10
-    
-206  #define J_ENABLE_PIN                        PD13
-    
-207  #ifndef J_CS_PIN
-    
-208  #define J_CS_PIN                          PD12    
-    
-310  #define I_SERIAL_TX_PIN                  PC6
-    
-311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN   
-    
-313  #define J_SERIAL_TX_PIN                  PD12
-    
-314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
+    68   #define I_DIAG_PIN                         PC2   // E0DET  
+    69   #define J_DIAG_PIN                         PA0   // E1DET   
+    71   #define I_STOP_PIN                  I_DIAG_PIN    
+    72   #define J_STOP_PIN                  J_DIAG_PIN        
+    197  #define I_STEP_PIN                          PD15    
+    198  #define I_DIR_PIN                           PD14    
+    199  #define I_ENABLE_PIN                        PC7    
+    200  #ifndef I_CS_PIN    
+    201  #define I_CS_PIN                          PC6      
+    204  #define J_STEP_PIN                          PD11    
+    205  #define J_DIR_PIN                           PD10    
+    206  #define J_ENABLE_PIN                        PD13    
+    207  #ifndef J_CS_PIN    
+    208  #define J_CS_PIN                          PD12        
+    310  #define I_SERIAL_TX_PIN                  PC6    
+    311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN       
+    313  #define J_SERIAL_TX_PIN                  PD12 
+    314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
     
     
    ##### 8/10/2022  
 
-68   #define I_DIAG_PIN                         PC2   // E0DET
-
-69   #define J_DIAG_PIN                         PA0   // E1DET
-
-71   #define I_STOP_PIN                  I_DIAG_PIN
-
-72   #define J_STOP_PIN                  J_DIAG_PIN
+    68   #define I_DIAG_PIN                         PC2   // E0DET
+    69   #define J_DIAG_PIN                         PA0   // E1DET
+    71   #define I_STOP_PIN                  I_DIAG_PIN
+    72   #define J_STOP_PIN                  J_DIAG_PIN
 
 Delete Lines 195-205:
 
@@ -440,23 +290,21 @@ Replace Lines 208-218 with:
     205 #define J_DIR_PIN                           PD10
     206 #define J_ENABLE_PIN                        PD13
     207 #ifndef J_CS_PIN
-    208 #define J_CS_PIN                          PD12   
+    208 #define J_CS_PIN                            PD12   
     
-310  #define I_SERIAL_TX_PIN                  PC6
-
-311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN
-
-313  #define J_SERIAL_TX_PIN                  PD12
-
-314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN   
+Further Changes:
+    
+    310  #define I_SERIAL_TX_PIN                  PC6
+    311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN
+    313  #define J_SERIAL_TX_PIN                  PD12
+    314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN   
 
 ### macros.h
     
 ##### 8/28/2022  
     
-134  #define HYPOT2AB(i,j) (sq(i)+sq(j))
-    
-410  #define HYPOTAB(i,j) SQRT(HYPOT2AB(i,j))  
+    134  #define HYPOT2AB(i,j) (sq(i)+sq(j))
+    410  #define HYPOTAB(i,j) SQRT(HYPOT2AB(i,j))  
     
     
     
