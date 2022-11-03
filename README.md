@@ -380,8 +380,51 @@ Further Changes:
 
 
 
-    
-    
+## Printer Hardware Setup
+This section provides detail on how the printer is manually setup using the STM32F429VGT6 SKR 2 board.
+
+### Connections to top of the board:
+
+YM:   2B, 2A, 1A, 1B.  Connected to Y axis adjuster (Tilt Mechanism)
+
+2MA:  2B, 2A, 1A, 1B.
+
+EOM:  2B, 2A, 1A, 1B.  Connected to Left Motor of belt drive.
+
+Fan3: 12/24v
+
+ELM:  2B, 2A, 1A, 1B. Connected to Right Motor of belt drive.
+
+
+### Connections to Bottom Right of the board:
+
+Z-Stop: PC0, GND, +5v
+
+PWRET:  PC15, GND, +5v
+
+Y-Stop: PC3, GND, +5v   
+
+E1DET:  PA0, GND, +5v
+
+X-Stop: PC1, GND, +5v
+
+E0DET:  PC2, GND, +5v
+
+SERVOS: GND, +5v, PE5
+
+TH1:    GND, PA3
+
+
+### Connections to Middle of the board:
+
+USB-VDD: U5V, +5v, VDD
+
+### Connections to Top of the board:
+
+DCIN: GND, 12/24v
+
+BED:  12/24v, PD7
+
     
 ## Marlin 2.0 Bugfix Branch
 
