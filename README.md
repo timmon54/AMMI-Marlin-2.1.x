@@ -385,45 +385,45 @@ This section provides detail on how the printer is manually setup using the STM3
 
 ### Connections to top of the board:
 
-YM:   2B, 2A, 1A, 1B.  Connected to Y axis adjuster (Tilt Mechanism)
+YM:   2B, 2A, 1A, 1B.                        Connected to Y axis adjuster (Tilt Mechanism)
 
-2MA:  2B, 2A, 1A, 1B.
+2MA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. 
 
-EOM:  2B, 2A, 1A, 1B.  Connected to Left Motor of belt drive.
+EOM:  2B, 2A, 1A, 1B.                        Connected to Left Motor of belt drive.
 
-Fan3: 12/24v
+Fan3: 12/24v, GND                            Connected to Buck Boost Converter (24v to 12v) which is attached to the 12v printer fan.
 
-ELM:  2B, 2A, 1A, 1B. Connected to Right Motor of belt drive.
+ELM:  2B, 2A, 1A, 1B.                        Connected to Right Motor of belt drive.
 
 
 ### Connections to Bottom Right of the board:
 
-Z-Stop: PC0, GND, +5v
+Z-Stop: PC0, GND, +5v                        Joined with SERVOS connection to set limit on z-axis (vertical height) for the build plate.
 
-PWRET:  PC15, GND, +5v
+PWRET:  PC15, GND, +5v                       Has a cable with no end connection
 
-Y-Stop: PC3, GND, +5v   
+Y-Stop: PC3, GND, +5v                        Connected to stopping sensor for y-axis range control.
 
-E1DET:  PA0, GND, +5v
+E1DET:  PA0, GND, +5v                        Connected to the build plate tilt mechanism.
 
-X-Stop: PC1, GND, +5v
+//X-Stop: PC1, GND, +5v
 
-E0DET:  PC2, GND, +5v
+//E0DET:  PC2, GND, +5v   
 
-SERVOS: GND, +5v, PE5
+SERVOS: GND, +5v, PE5                        Connected to BLTOUCH_V2 sensor of printer for aoutoleveling of the build plate.
 
-TH1:    GND, PA3
+TH1:    GND, PA3                             Connected to the potentiometer that perfomrs ADC for belt tensioning system.
 
 
 ### Connections to Middle of the board:
 
-USB-VDD: U5V, +5v, VDD
+USB-VDD: U5V, +5v, VDD                        Connected to power switch.
 
 ### Connections to Top of the board:
 
-DCIN: GND, 12/24v
+DCIN: GND, 12/24v                             Connected to S-360-240 power supply that powers the printer 
 
-BED:  12/24v, PD7
+BED:  12/24v, PD7                             No connection yet.
 
     
 ## Marlin 2.0 Bugfix Branch
