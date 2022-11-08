@@ -424,6 +424,9 @@ This section provides detail on how the printer is manually setup using the STM3
     DCIN: GND, 12/24v                             Connected to S-360-240 power supply that powers the printer 
 
     BED:  12/24v, PD7                             No connection yet.
+    
+### Connections on Raspberry Pi:   
+   Network Connection to router for Wifi signal. 
 
     
 ## Marlin 2.0 Bugfix Branch
