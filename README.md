@@ -432,6 +432,13 @@ This section provides detail on how the printer is manually setup using the STM3
      USB connection to SKR_V2.
      
      HDMI connection to Projector in order to display layer image. 
+     
+### Connections on Router:
+
+    Ethernet connection to computer
+    
+    Ethernet connection to Raspberry Pi.
+    
 
     
 ## Marlin 2.0 Bugfix Branch
