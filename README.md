@@ -417,7 +417,7 @@ This section provides detail on how the printer is manually setup using the STM3
 
 ### Connections to Middle of the board:
 
-    USB-VDD: U5V, +5v, VDD                        Connected to power switch.
+    USB-VDD: U5V, +5v, VDD                        Connected to controller power switch.
 
 ### Connections to Top of the board:
 
@@ -426,7 +426,12 @@ This section provides detail on how the printer is manually setup using the STM3
     BED:  12/24v, PD7                             No connection yet.
     
 ### Connections on Raspberry Pi:   
-   Network Connection to router for Wifi signal. 
+     
+     Network Connection to router for Wifi signal. 
+     
+     USB connection to SKR_V2.
+     
+     HDMI connection to Projector in order to display layer image. 
 
     
 ## Marlin 2.0 Bugfix Branch
