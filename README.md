@@ -381,26 +381,37 @@ Further Changes:
 
 
 ## Printer Hardware Setup
+
+<p align="center"><img src="https://teamgloomy.github.io/images/skr_2.0_pins.png" height="200" p>
+
+<h2 align="center">SKR v2.0 Pinout Diagram</h2>
+
 This section provides detail on how the printer is manually setup using the STM32F429VGT6 SKR 2 board.
 
-### Connections to top of the board:
+### Motor Connections:
+
+    FAN4: 12/24v, GND                            No connection
+    
+    XM:   2B, 2A, 1A, 1B.                        Connection to Right Motor of belt drive
 
     YM:   2B, 2A, 1A, 1B.                        Connected to Y axis adjuster (Tilt Mechanism)
 
-    2MA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. 
+    ZMA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. 
+    
+    ZMB:  2B, 2A, 1A, 1B.                        No connection
 
     EOM:  2B, 2A, 1A, 1B.                        Connected to Left Motor of belt drive.
-
-    Fan3: 12/24v, GND                            Connected to Buck Boost Converter (24v to 12v) which is attached to the 12v printer fan.
+    
+    FAN3: 12/24v, GND                            Connected to Buck Boost Converter (24v to 12v) which is attached to the 12v printer fan.
         
-    ELM:  2B, 2A, 1A, 1B.                        Connected to Right Motor of belt drive.
+    E1M:  2B, 2A, 1A, 1B.                        No Connection
 
 
-### Connections to Bottom Right of the board:
+### Sensor Connections:
 
     Z-Stop: PC0, GND, +5v                        Joined with SERVOS connection to set limit on z-axis (vertical height) for the build plate.
 
-    PWRET:  PC15, GND, +5v                       Has a cable with no end connection
+    PWRDET:  PC15, GND, +5v                      Has a cable with no end connection
 
     Y-Stop: PC3, GND, +5v                        Connected to stopping sensor for y-axis range control.
 
@@ -409,17 +420,35 @@ This section provides detail on how the printer is manually setup using the STM3
     X-Stop: PC1, GND, +5v                        No connection
 
     E0DET:  PC2, GND, +5v                        No connection
-
+    
+    EXP1:   +5v, GND, PE13, PE12, PE11           No connection
+            PE10, PE9, PB1, PB0, PC5
+    
+    EXP2:   NC, GND, RESET, PC4, PA7             No connection
+            PB2, PA4, PA7, PA5, PA6
+            
+    I2C:    PB8, PB9, GND, +5V                   No connection        
+           
+    Probe:  GND, PE4                             No connection       
+ 
     SERVOS: GND, +5v, PE5                        Connected to BLTOUCH_V2 sensor of printer for aoutoleveling of the build plate.
+    
+    RGB:    GND, PE6, +5v                        No connection
+    
+    TFT:    +5V, GND, PA9, Pa10, RST             No connection
 
     TH1:    GND, PA3                             Connected to the potentiometer that perfomrs ADC for belt tensioning system.
+    
+    TH0:    GND, PA2                             No connection
+    
+    TB:     GND, PA1                             No connection
+    
+    PS-ON:  PE8, GND                             No connection
 
 
-### Connections to Middle of the board:
+### Power and Switch Connections:
 
     USB-VDD: U5V, +5v, VDD                        Connected to controller power switch.
-
-### Connections to Top of the board:
 
     DCIN: GND, 12/24v                             Connected to S-360-240 power supply that powers the printer 
 
