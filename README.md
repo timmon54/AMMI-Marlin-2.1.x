@@ -390,6 +390,16 @@ This section provides detail on how the printer is manually setup using the STM3
 
 ### Motor Connections:
 
+    FAN0: VBB, PB7                               No connection
+    
+    FAN1: VBB, PB6                               No connection
+    
+    FAN2: VBB, PB5                               No connection
+    
+    HE0: VBB, PB3                                No connection
+    
+    HE1: VBB, PB4                                No connection
+
     FAN4: 12/24v, GND                            No connection
     
     XM:   2B, 2A, 1A, 1B.                        Connection to Right Motor of belt drive
