@@ -72,11 +72,11 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 
     531  #define TEMP_SENSOR_0 998
     539  #define TEMP_SENSOR_BED 998
-    826  //#define THERMAL_PROTECTION_HOTENDS // Enable thermal protection for all extruders
-    827  //#define THERMAL_PROTECTION_BED     // Enable thermal protection for the heated bed
-    828  //#define THERMAL_PROTECTION_CHAMBER // Enable thermal protection for the heated chamber
-    829  //#define THERMAL_PROTECTION_COOLER  // Enable thermal protection for the laser cooling
-    1746 #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
+    826  //#define THERMAL_PROTECTION_HOTENDS   // Enable thermal protection for all extruders
+    827  //#define THERMAL_PROTECTION_BED       // Enable thermal protection for the heated bed
+    828  //#define THERMAL_PROTECTION_CHAMBER   // Enable thermal protection for the heated chamber
+    829  //#define THERMAL_PROTECTION_COOLER    // Enable thermal protection for the laser cooling
+    1746 #define FIL_RUNOUT_STATE     LOW       // Pin state indicating that filament is NOT present.
     1788 #define FILAMENT_RUNOUT_SCRIPT "M600"
     2189 #define NOZZLE_PARK_FEATURE
     2193 #define NOZZLE_PARK_POINT { X_MIN_POS, 0, 25 }
@@ -114,7 +114,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     1499 #define PROBE_ENABLE_DISABLE
     1611 #define INVERT_Y_DIR false
     1644 #define Z_HOMING_HEIGHT  10      // (mm) Minimal Z height before homing (G28) for Z clearance above the bed, clamps, ...
-    1647 #define Z_AFTER_HOMING  0     // (mm) Height to move to after homing Z
+    1647 #define Z_AFTER_HOMING  0       // (mm) Height to move to after homing Z
     1652 #define Y_HOME_DIR 1
     1664 #define X_BED_SIZE 1000
     1665 #define Y_BED_SIZE 50
@@ -123,8 +123,8 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     1672 +#define Y_MAX_POS 5
     1673 #define Z_MAX_POS 140
     1741 #define FILAMENT_RUNOUT_SENSOR
-    1746 #define FIL_RUNOUT_STATE     HIGH        // Pin state indicating that filament is NOT present.
-    1747 //#define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
+    1746 #define FIL_RUNOUT_STATE     HIGH       // Pin state indicating that filament is NOT present.
+    1747 //#define FIL_RUNOUT_PULLUP            // Use internal pullup for filament runout pins.
     1748 #define FIL_RUNOUT_PULLDOWN           // Use internal pulldown for filament runout pins.
     1842 #define AUTO_BED_LEVELING_LINEAR
     1869 #define DEBUG_LEVELING_FEATURE
@@ -135,7 +135,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     2051 #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
     2055 #define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60) }
     2132 #define EEPROM_SETTINGS     // Persistent storage with M500 and M501
-    2137 #define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
+    2137 #define EEPROM_AUTO_INIT    // Init EEPROM automatically on any errors.
     2138  #define EEPROM_INIT_NOW   // Init EEPROM on first boot after a new build.
     2405 #define SDSUPPORT
 
@@ -148,19 +148,19 @@ In order to have a fucntioning DLP printer, the following modifcations were made
 
    ##### 8/15/2022
 
-    1561 //#define LONG_FILENAME_HOST_SUPPORT    // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
-    1577 //#define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'
+    1561 //#define LONG_FILENAME_HOST_SUPPORT        // Get the long filename of a file/folder with 'M33 <dosname>' and list long filenames with 'M20 L'
+    1577 //#define AUTO_REPORT_SD_STATUS            // Auto-report media status with 'M27 S<seconds>'
     1660 //#define SDCARD_CONNECTION ONBOARD
     2402 //#define SERIAL_FLOAT_PRECISION 4
-    2600 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu. 
+    2600 //#define FILAMENT_LOAD_UNLOAD_GCODES     // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu. 
     3629 //#define AUTO_REPORT_TEMPERATURES
     3637 //#define AUTO_REPORT_POSITION
     3644 //#define M115_GEOMETRY_REPORT        
-    3692 //#define M114_DETAIL         // Use 'M114` for details to check planner calculations    
-    3696 //#define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)   
+    3692 //#define M114_DETAIL                    // Use 'M114` for details to check planner calculations    
+    3696 //#define REPORT_FAN_CHANGE             // Report the new fan speed when changed by M106 (and others)   
     3859 //#define HOST_ACTION_COMMANDS    
     3862 //#define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback        
-    3864 //#define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications    
+    3864 //#define HOST_STATUS_NOTIFICATIONS    // Send some status messages to the host as notifications    
     
     
    ##### 8/10/2022
@@ -173,14 +173,14 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     1577 #define AUTO_REPORT_SD_STATUS         // Auto-report media status with 'M27 S<seconds>'    
     1660 #define SDCARD_CONNECTION ONBOARD   
     2402 #define SERIAL_FLOAT_PRECISION 4
-    2600 #define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
+    2600 #define FILAMENT_LOAD_UNLOAD_GCODES  // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
     3637 #define AUTO_REPORT_POSITION        
     3644 #define M115_GEOMETRY_REPORT    
-    3692 #define M114_DETAIL         // Use 'M114` for details to check planner calculations        
-    3696 #define REPORT_FAN_CHANGE   // Report the new fan speed when changed by M106 (and others)      
+    3692 #define M114_DETAIL                  // Use 'M114` for details to check planner calculations        
+    3696 #define REPORT_FAN_CHANGE            // Report the new fan speed when changed by M106 (and others)      
     3859 #define HOST_ACTION_COMMANDS    
-    3862 #define HOST_PROMPT_SUPPORT           // Initiate host prompts to get user feedback        
-    3864 #define HOST_STATUS_NOTIFICATIONS   // Send some status messages to the host as notifications 
+    3862 #define HOST_PROMPT_SUPPORT          // Initiate host prompts to get user feedback        
+    3864 #define HOST_STATUS_NOTIFICATIONS    // Send some status messages to the host as notifications 
     
 
    ##### 7/25/2022
@@ -193,7 +193,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     
    ##### 7/20/2022
     
-    1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }          // Values in milliamps
+    1242 //#define PWM_MOTOR_CURRENT { 800, 800, 800 }       // Values in milliamps
     3133 #define MONITOR_DRIVER_STATUS
     3242 #define TMC_DEBUG
 
@@ -202,7 +202,7 @@ In order to have a fucntioning DLP printer, the following modifcations were made
    
     907  #define BLTOUCH_SET_5V_MODE
     1989 #define BABYSTEPPING
-    2012 #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
+    2012 #define BABYSTEP_ZPROBE_OFFSET    // Combine M851 Z and Babystepping
     4054 #define NANODLP_Z_SYNC
     4215 #define DIRECT_PIN_CONTROL
     4220 #define PINS_DEBUGGING
@@ -212,92 +212,92 @@ In order to have a fucntioning DLP printer, the following modifcations were made
     
    ##### 8/28/2022
     
-    68   #define I_DIAG_PIN                          PC2   // E0DET  
-    69   #define J_DIAG_PIN                          PC2   // E0DET      
-    151  #define FIL_RUNOUT_PIN                      PC15   // PWRDET    
-    152  //#define FIL_RUNOUT2_PIN                     PA0   // E1DET    
-    165  //#define POWER_LOSS_PIN                    PC15  // PWRDET
+    68   #define I_DIAG_PIN                PC2   // E0DET  
+    69   #define J_DIAG_PIN                PC2   // E0DET      
+    151  #define FIL_RUNOUT_PIN            PC15   // PWRDET    
+    152  //#define FIL_RUNOUT2_PIN         PA0   // E1DET    
+    165  //#define POWER_LOSS_PIN          PC15  // PWRDET
     
     
    ##### 8/15/2022  
     
-    68   #define I_DIAG_PIN                         PC2   // E0DET  
-    69   #define J_DIAG_PIN                         PA0   // E1DET   
-    71   #define I_STOP_PIN                  I_DIAG_PIN    
-    72   #define J_STOP_PIN                  J_DIAG_PIN        
-    197  #define I_STEP_PIN                          PD15    
-    198  #define I_DIR_PIN                           PD14    
-    199  #define I_ENABLE_PIN                        PC7    
+    68   #define I_DIAG_PIN                PC2   // E0DET  
+    69   #define J_DIAG_PIN                PA0   // E1DET   
+    71   #define I_STOP_PIN                I_DIAG_PIN    
+    72   #define J_STOP_PIN                J_DIAG_PIN        
+    197  #define I_STEP_PIN                PD15    
+    198  #define I_DIR_PIN                 PD14    
+    199  #define I_ENABLE_PIN              PC7    
     200  #ifndef I_CS_PIN    
-    201  #define I_CS_PIN                          PC6      
-    204  #define J_STEP_PIN                          PD11    
-    205  #define J_DIR_PIN                           PD10    
-    206  #define J_ENABLE_PIN                        PD13    
+    201  #define I_CS_PIN                  PC6      
+    204  #define J_STEP_PIN                PD11    
+    205  #define J_DIR_PIN                 PD10    
+    206  #define J_ENABLE_PIN              PD13    
     207  #ifndef J_CS_PIN    
-    208  #define J_CS_PIN                          PD12        
-    310  #define I_SERIAL_TX_PIN                  PC6    
-    311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN       
+    208  #define J_CS_PIN                  PD12        
+    310  #define I_SERIAL_TX_PIN           PC6    
+    311  #define I_SERIAL_RX_PIN           I_SERIAL_TX_PIN       
     313  #define J_SERIAL_TX_PIN                  PD12 
-    314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN    
+    314  #define J_SERIAL_RX_PIN           J_SERIAL_TX_PIN    
     
     
    ##### 8/10/2022  
 
-    68   #define I_DIAG_PIN                         PC2   // E0DET
-    69   #define J_DIAG_PIN                         PA0   // E1DET
-    71   #define I_STOP_PIN                  I_DIAG_PIN
-    72   #define J_STOP_PIN                  J_DIAG_PIN
+    68   #define I_DIAG_PIN                 PC2   // E0DET
+    69   #define J_DIAG_PIN                 PA0   // E1DET
+    71   #define I_STOP_PIN                 I_DIAG_PIN
+    72   #define J_STOP_PIN                 J_DIAG_PIN
 
 Delete Lines 195-205:
 
     195  #ifndef E0_STEP_PIN
-    196  #define E0_STEP_PIN                       PD15
+    196  #define E0_STEP_PIN                 PD15
     197  #endif
     198  #ifndef E0_DIR_PIN
-    199   #define E0_DIR_PIN                        PD14
+    199   #define E0_DIR_PIN                 PD14
     200  #endif
     201 #ifndef E0_ENABLE_PIN
-    202  #define E0_ENABLE_PIN                     PC7
+    202  #define E0_ENABLE_PIN               PC7
     203  #endif
     204  #ifndef E0_CS_PIN
-    205   #define E0_CS_PIN                         PC6
+    205   #define E0_CS_PIN                  PC6
 
 Replace lines 195-205 with:
 
-    197  #define I_STEP_PIN                          PD15
-    198  #define I_DIR_PIN                           PD14
-    199  #define I_ENABLE_PIN                        PC7
+    197  #define I_STEP_PIN                  PD15
+    198  #define I_DIR_PIN                   PD14
+    199  #define I_ENABLE_PIN                PC7
     200  #ifndef I_CS_PIN
-    201  #define I_CS_PIN                            PC6
+    201  #define I_CS_PIN                    PC6
     
 Delete Lines 208-218:
 
     208 #ifndef E1_STEP_PIN
-    209  #define E1_STEP_PIN                       PD11
+    209  #define E1_STEP_PIN                 PD11
     210 #endif
     211 #ifndef E1_DIR_PIN
-    212 #define E1_DIR_PIN                        PD10
+    212 #define E1_DIR_PIN                   PD10
     213 #endif
     214 #ifndef E1_ENABLE_PIN
-    215 #define E1_ENABLE_PIN                     PD13
+    215 #define E1_ENABLE_PIN                PD13
     216 #endif
     217 #ifndef E1_CS_PIN
-    218 #define E1_CS_PIN                         PD12
+    218 #define E1_CS_PIN                    PD12
     
 Replace Lines 208-218 with:
     
-    204 #define J_STEP_PIN                          PD11
-    205 #define J_DIR_PIN                           PD10
-    206 #define J_ENABLE_PIN                        PD13
+    204 #define J_STEP_PIN                   PD11
+    205 #define J_DIR_PIN                    PD10
+    206 #define J_ENABLE_PIN                 PD13
     207 #ifndef J_CS_PIN
-    208 #define J_CS_PIN                            PD12   
+    208 #define J_CS_PIN                     PD12   
     
 Further Changes:
     
-    310  #define I_SERIAL_TX_PIN                  PC6
-    311  #define I_SERIAL_RX_PIN      I_SERIAL_TX_PIN
-    313  #define J_SERIAL_TX_PIN                  PD12
-    314  #define J_SERIAL_RX_PIN      J_SERIAL_TX_PIN   
+    310  #define I_SERIAL_TX_PIN             PC6
+    311  #define I_SERIAL_RX_PIN             I_SERIAL_TX_PIN
+    313  #define J_SERIAL_TX_PIN             PD12
+    314  #define J_SERIAL_RX_PIN             J_SERIAL_TX_PIN   
 
 ### macros.h
     
@@ -390,13 +390,13 @@ This section provides detail on how the printer is manually setup using the STM3
 
 ### Motor Connections:
     
-    XM:   2B, 2A, 1A, 1B.                        Connection to Right Motor of belt drive
+    XM:   2B, 2A, 1A, 1B.                        Connection to Right Motor of belt drive in order to control its direction and speed. 
 
-    YM:   2B, 2A, 1A, 1B.                        Connected to Y axis adjuster (Tilt Mechanism)
+    YM:   2B, 2A, 1A, 1B.                        Connected to Y axis adjuster (Tilt Mechanism). Allows tray to tilt on an angle to pull off each printing layer. 
 
-    ZMA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. 
+    ZMA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. Controls the vertical height of build plate.
 
-    EOM:  2B, 2A, 1A, 1B.                        Connected to Left Motor of belt drive.
+    EOM:  2B, 2A, 1A, 1B.                        Connected to Left Motor of belt drive in order to control its speed and direction. 
     
     FAN3: 12/24v, GND                            Connected to Buck Boost Converter (24v to 12v) which is attached to the 12v printer fan.
 
@@ -413,8 +413,7 @@ This section provides detail on how the printer is manually setup using the STM3
  
     SERVOS: GND, +5v, PE5                        Connected to BLTOUCH_V2 sensor of printer for aoutoleveling of the build plate.
 
-    TH1:    GND, PA3                             Connected to the potentiometer that perfomrs ADC for belt tensioning system.
-
+    TH1:    GND, PA3                             Connected to the potentiometer that perfomrs ADC for belt tensioning system. Potentiometer adjusts tensioner based                                                  on digital voltage reading.
 
 ### Power and Switch Connections:
 
@@ -433,7 +432,7 @@ This section provides detail on how the printer is manually setup using the STM3
      
 ### Connections on Router:
 
-    Ethernet connection to computer
+    Ethernet connection to computer to provide internet connection.
     
     Ethernet connection to Raspberry Pi.
     
