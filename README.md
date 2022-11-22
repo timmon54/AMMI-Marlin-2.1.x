@@ -389,32 +389,16 @@ Further Changes:
 This section provides detail on how the printer is manually setup using the STM32F429VGT6 SKR 2 board.
 
 ### Motor Connections:
-
-    FAN0: VBB, PB7                               No connection
-    
-    FAN1: VBB, PB6                               No connection
-    
-    FAN2: VBB, PB5                               No connection
-    
-    HE0: VBB, PB3                                No connection
-    
-    HE1: VBB, PB4                                No connection
-
-    FAN4: 12/24v, GND                            No connection
     
     XM:   2B, 2A, 1A, 1B.                        Connection to Right Motor of belt drive
 
     YM:   2B, 2A, 1A, 1B.                        Connected to Y axis adjuster (Tilt Mechanism)
 
     ZMA:  2B, 2A, 1A, 1B.                        Connected to Z axis belt that is attached to the build plate. 
-    
-    ZMB:  2B, 2A, 1A, 1B.                        No connection
 
     EOM:  2B, 2A, 1A, 1B.                        Connected to Left Motor of belt drive.
     
     FAN3: 12/24v, GND                            Connected to Buck Boost Converter (24v to 12v) which is attached to the 12v printer fan.
-        
-    E1M:  2B, 2A, 1A, 1B.                        No Connection
 
 
 ### Sensor Connections:
@@ -426,34 +410,10 @@ This section provides detail on how the printer is manually setup using the STM3
     Y-Stop: PC3, GND, +5v                        Connected to stopping sensor for y-axis range control.
 
     E1DET:  PA0, GND, +5v                        Connected to the build plate tilt mechanism.
-
-    X-Stop: PC1, GND, +5v                        No connection
-
-    E0DET:  PC2, GND, +5v                        No connection
-    
-    EXP1:   +5v, GND, PE13, PE12, PE11           No connection
-            PE10, PE9, PB1, PB0, PC5
-    
-    EXP2:   NC, GND, RESET, PC4, PA7             No connection
-            PB2, PA4, PA7, PA5, PA6
-            
-    I2C:    PB8, PB9, GND, +5V                   No connection        
-           
-    Probe:  GND, PE4                             No connection       
  
     SERVOS: GND, +5v, PE5                        Connected to BLTOUCH_V2 sensor of printer for aoutoleveling of the build plate.
-    
-    RGB:    GND, PE6, +5v                        No connection
-    
-    TFT:    +5V, GND, PA9, Pa10, RST             No connection
 
     TH1:    GND, PA3                             Connected to the potentiometer that perfomrs ADC for belt tensioning system.
-    
-    TH0:    GND, PA2                             No connection
-    
-    TB:     GND, PA1                             No connection
-    
-    PS-ON:  PE8, GND                             No connection
 
 
 ### Power and Switch Connections:
@@ -462,7 +422,6 @@ This section provides detail on how the printer is manually setup using the STM3
 
     DCIN: GND, 12/24v                             Connected to S-360-240 power supply that powers the printer 
 
-    BED:  12/24v, PD7                             No connection yet.
     
 ### Connections on Raspberry Pi:   
      
@@ -478,7 +437,49 @@ This section provides detail on how the printer is manually setup using the STM3
     
     Ethernet connection to Raspberry Pi.
     
+### Pins Not Used on Board
 
+    FAN0: VBB, PB7                               No connection
+    
+    FAN1: VBB, PB6                               No connection
+    
+    FAN2: VBB, PB5                               No connection
+    
+    HE0: VBB, PB3                                No connection
+    
+    HE1: VBB, PB4                                No connection
+
+    FAN4: 12/24v, GND                            No connection
+    
+    ZMB:  2B, 2A, 1A, 1B.                        No connection
+        
+    E1M:  2B, 2A, 1A, 1B.                        No Connection
+
+    BED:  12/24v, PD7                            No connection.
+    
+    X-Stop: PC1, GND, +5v                        No connection
+
+    E0DET:  PC2, GND, +5v                        No connection
+    
+    EXP1:   +5v, GND, PE13, PE12, PE11           No connection
+            PE10, PE9, PB1, PB0, PC5
+    
+    EXP2:   NC, GND, RESET, PC4, PA7             No connection
+            PB2, PA4, PA7, PA5, PA6
+            
+    I2C:    PB8, PB9, GND, +5V                   No connection        
+           
+    Probe:  GND, PE4                             No connection       
+    
+    RGB:    GND, PE6, +5v                        No connection
+    
+    TFT:    +5V, GND, PA9, Pa10, RST             No connection
+    
+    TH0:    GND, PA2                             No connection
+    
+    TB:     GND, PA1                             No connection
+    
+    PS-ON:  PE8, GND                             No connection
     
 ## Marlin 2.0 Bugfix Branch
 
