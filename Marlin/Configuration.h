@@ -200,7 +200,7 @@
 #endif
 #ifdef J_DRIVER_TYPE
   #define AXIS5_NAME 'B' // :['B', 'C', 'U', 'V', 'W']
-  //#define AXIS5_ROTATES
+  #define AXIS5_ROTATES
 #endif
 #ifdef K_DRIVER_TYPE
   #define AXIS6_NAME 'C' // :['C', 'U', 'V', 'W']
@@ -1134,14 +1134,14 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 88.88, 80 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 400, 800, 88.88, 88.88 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 3600, 10 }
+#define DEFAULT_MAX_FEEDRATE          { 10, 10, 10 , 3600, 3600 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1660,7 +1660,7 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 155
+#define X_BED_SIZE 1000
 #define Y_BED_SIZE 50
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
@@ -1672,8 +1672,8 @@
 #define Z_MAX_POS 140
 #define I_MIN_POS -3600000
 #define I_MAX_POS 3600000
-#define J_MIN_POS 0
-#define J_MAX_POS 125
+#define J_MIN_POS -3600000
+#define J_MAX_POS 3600000
 //#define K_MIN_POS 0
 //#define K_MAX_POS 50
 //#define U_MIN_POS 0
@@ -2052,7 +2052,7 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (60*60), (50*60) }
+#define HOMING_FEEDRATE_MM_M { (50*60), (5*60), (5*60), (60*60), (60*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2662,7 +2662,7 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
 
 //
 // K.3D Full Graphic Smart Controller
