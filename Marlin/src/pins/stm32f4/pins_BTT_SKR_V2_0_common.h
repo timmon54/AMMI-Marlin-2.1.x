@@ -148,8 +148,8 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN                      PC15   // PWRDET
-//#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+//#define FIL_RUNOUT_PIN                      PC15   // PWRDET
+#define FIL_RUNOUT2_PIN                     PC15   // PWRDET Tray Detection
 
 #ifndef FILWIDTH_PIN
   //#define FILWIDTH_PIN                         PA0  // Analog Input E1DET
