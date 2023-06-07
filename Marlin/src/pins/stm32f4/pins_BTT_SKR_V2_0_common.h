@@ -66,7 +66,7 @@
 #define Y_DIAG_PIN                          PC3   // Y-STOP
 #define Z_DIAG_PIN                          PC0   // Z-STOP
 #define I_DIAG_PIN                          PC2   // E0DET
-#define J_DIAG_PIN                          PC2   // E0DET
+#define J_DIAG_PIN                          PA0   // E1DET
 
 #define I_STOP_PIN                  I_DIAG_PIN
 #define J_STOP_PIN                  J_DIAG_PIN
@@ -149,7 +149,12 @@
 // Filament Runout Sensor
 //
 #define FIL_RUNOUT_PIN                      PC15   // PWRDET
-#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+//#define FIL_RUNOUT2_PIN                     PA0   // E1DET
+
+#ifndef FILWIDTH_PIN
+  //#define FILWIDTH_PIN                         PA0  // Analog Input E1DET
+#endif
+
 
 //
 // Power Supply Control
