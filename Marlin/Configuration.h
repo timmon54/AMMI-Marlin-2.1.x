@@ -998,7 +998,7 @@
 // Specify here all the endstop connectors that are connected to any endstop or probe.
 // Almost all printers will be using one per axis. Probes will use one or more of the
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
-#define USE_XMIN_PLUG
+//#define USE_XMIN_PLUG
 //#define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
 #define USE_IMIN_PLUG
@@ -1007,7 +1007,7 @@
 //#define USE_UMIN_PLUG
 //#define USE_VMIN_PLUG
 //#define USE_WMIN_PLUG
-//#define USE_XMAX_PLUG
+#define USE_XMAX_PLUG
 #define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 //#define USE_IMAX_PLUG
@@ -1072,7 +1072,7 @@
 #define Y_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define Z_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define I_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
-#define J_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
+#define J_MIN_ENDSTOP_INVERTING false// Set to true to invert the logic of the endstop.
 #define K_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define U_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
 #define V_MIN_ENDSTOP_INVERTING false // Set to true to invert the logic of the endstop.
@@ -1647,7 +1647,7 @@
 
 // Direction of endstops when homing; 1=MAX, -1=MIN
 // :[-1,1]
-#define X_HOME_DIR -1
+#define X_HOME_DIR 1
 #define Y_HOME_DIR 1
 #define Z_HOME_DIR -1
 #define I_HOME_DIR -1
@@ -1660,8 +1660,9 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 155
+#define X_BED_SIZE 100 // Laser Cutter X Axis
 #define Y_BED_SIZE 50
+#define J_BED_SIZE 145 // Laser Cutter B Axis
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1673,7 +1674,7 @@
 #define I_MIN_POS -3600000
 #define I_MAX_POS 3600000
 #define J_MIN_POS 0
-#define J_MAX_POS 125
+#define J_MAX_POS J_BED_SIZE
 //#define K_MIN_POS 0
 //#define K_MAX_POS 50
 //#define U_MIN_POS 0
@@ -1753,8 +1754,8 @@
   #define FIL_RUNOUT1_PULLUP
   //#define FIL_RUNOUT1_PULLDOWN
 
-  //#define FIL_RUNOUT2_STATE LOW
-  //#define FIL_RUNOUT2_PULLUP
+  #define FIL_RUNOUT2_STATE LOW
+  #define FIL_RUNOUT2_PULLUP
   //#define FIL_RUNOUT2_PULLDOWN
 
   //#define FIL_RUNOUT3_STATE LOW
@@ -2046,7 +2047,7 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  //#define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
+  #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
   #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
 
 #endif

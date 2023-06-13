@@ -94,7 +94,7 @@
 
 #endif // QUICK_HOME_AB
 
-
+/*
 #if ENABLED(BELT_ADVANCE_AB)
 
   static void quick_home_ab() {
@@ -127,7 +127,7 @@
 
 #endif // BELT_ADVANCE_AB
 
-
+*/
 
 #if ENABLED(QUICK_HOME)
 
