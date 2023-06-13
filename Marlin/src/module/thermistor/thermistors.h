@@ -205,8 +205,8 @@ typedef struct { raw_adc_t value; celsius_t celsius; } temp_entry_t;
 #if ANY_THERMISTOR_IS(999) // User-defined table 2
   #include "thermistor_999.h"
 #endif
-#if ANY_THERMISTOR_IS(1000) // Custom
-  constexpr temp_entry_t temptable_1000[] PROGMEM = { { 0, 0 } };
+#if ANY_THERMISTOR_IS(1000) // Potentiometer Reading Table for Tensioner Feedback
+  #include "thermistor_1000.h"
 #endif
 
 #define _TT_NAME(_N) temptable_ ## _N
