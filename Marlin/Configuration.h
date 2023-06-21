@@ -1660,9 +1660,9 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 100 // Laser Cutter X Axis
+#define X_BED_SIZE 95 // Laser Cutter X Axis
 #define Y_BED_SIZE 50
-#define J_BED_SIZE 145 // Laser Cutter B Axis
+#define J_BED_SIZE 130 // Laser Cutter B Axis
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
